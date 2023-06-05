@@ -31,6 +31,12 @@
         "projectId": "e797cafc-bbd2-4f75-b402-b80db93529d3"
       }
     },
-    "owner": "fryctze"
+    "owner": "fryctze",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e797cafc-bbd2-4f75-b402-b80db93529d3"
+    }
   }
 }
