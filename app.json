@@ -2,7 +2,7 @@
   "expo": {
     "name": "expo-field",
     "slug": "expo-field",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e797cafc-bbd2-4f75-b402-b80db93529d3"
+      }
+    },
+    "owner": "fryctze"
   }
 }
