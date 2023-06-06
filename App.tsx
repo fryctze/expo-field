@@ -8,9 +8,7 @@ export default function App() {
   return (
       <SafeAreaProvider>
           <StatusBar style="auto"/>
-          <SafeAreaView style={styles.container}>
-              <AppContainer/>
-          </SafeAreaView>
+          <AppContainer/>
       </SafeAreaProvider>
   );
 }
