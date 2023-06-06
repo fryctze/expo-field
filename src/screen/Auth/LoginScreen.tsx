@@ -1,6 +1,8 @@
-import {Button, KeyboardAvoidingView, StyleSheet, Text, TextInput, View} from "react-native";
-import { useState} from "react";
-import { useNavigation} from "@react-navigation/native";
+import {Button, KeyboardAvoidingView, StyleSheet, TextInput, View} from "react-native";
+import {useEffect, useState} from "react";
+import {useNavigation} from "@react-navigation/native";
+import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import { auth, app } from "../../../firebase";
 
 export default function LoginScreen() {
     const { navigate, replace } = useNavigation();
@@ -8,16 +10,32 @@ export default function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    useEffect(() => {
+        return auth.onAuthStateChanged(user => {
+            if (user) {
+                replace("Home");
+            }
+        });
+    });
+
     const handleSignups = () => {
-        setEmail('');
-        setPassword('');
         navigate('Register' as any);
     }
 
     const handleSignIn = () => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+                setEmail('');
+                setPassword('');
+                console.log(user.email);
+                //setMe(user.email);
+            })
+            .catch(error => alert(error.message));
+
         setEmail('');
         setPassword('');
-        replace('Home' as any);
+        //replace('Home' as any);
     }
 
     return (

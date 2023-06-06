@@ -1,6 +1,5 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {NavigationProp, useNavigation} from "@react-navigation/native";
-import {RootStackParamList} from "../navigation/navigation-types";
 
 const HomeScreen = () => {
     const { navigate, replace, push } = useNavigation();
