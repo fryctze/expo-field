@@ -18,6 +18,10 @@ const HomeScreen = () => {
             <Text>Home Screen</Text>
             <Text>Email</Text>
             <Button
+                title={"Back to login page"}
+                onPress={ () => {navigate('Login' as any)} }
+            />
+            <Button
                 title={"Log out"}
                 onPress={ handleSignOut }
             />
